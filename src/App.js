@@ -1,16 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import User from './User';   // functional component
-import ClsComp from './Cls-comp';  // class component
+import React, { useState } from 'react'
 
-function App() {
+export default function App() {
+
+  const [data, setData] = useState('yash')
+
+  /*
+  default data => yash 
+  ager data ko update karna ho to setData se hoga
+  */
+
+  const updateData = () => {
+    setData('jivani yash')
+  }
+
   return (
-    <div className="App">
-      <User/>
-      <ClsComp />
+    <div className='container'>
+      <h1>{data}</h1>
+      <button onClick={updateData}>Click</button>
     </div>
-    
-  );
+  )
 }
-
-export default App;
