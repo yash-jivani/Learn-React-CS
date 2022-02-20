@@ -1,30 +1,24 @@
 
 /*
 
-===== shouldComponentUpdate =====
+===== componentWillUnmount =====
 
-* component ke update ko control karta hai
-shouldComponentUpdate ki default value false hoti hai
-* ager shouldComponentUpdate ki value hogi to render method call nhi hoti
-(ager shouldCompUpdate ki value false hogi to component dusri bar render nhi hoga)
+* jab koi component delete/hide/remove hota hai tbhi componentWillUnmount calll hota hai
 
 */
 
 import React, { Component } from 'react'
+import UnmountEx from './component/UnmountEx';
 
 export default class App extends Component {
+
   constructor() {
     super();
-    this.state = {
-      count: 0
+    this.state={
+      show:true
     }
-    console.log('constructor');
-  }
 
-  shouldComponentUpdate(){
-    console.log("shouldCompUpdate called",this.state.count)
-    // return true;
-    return false;
+    console.log('constructor');
   }
 
   render() {
@@ -32,10 +26,11 @@ export default class App extends Component {
     return (
       <div className='container'>
 
-        <h2>shouldComponentUpdate with class Component</h2>
-        <h3>{this.state.count}</h3>
-        <button onClick={() => { this.setState({ count: this.state.count + 1 }) }}>click</button>
-
+        <h2>componentWillUnmount with class Component</h2>
+        {
+          this.state.show?<UnmountEx />:""
+        }
+        <button onClick={()=>{this.setState({show:!this.state.show})}}>Toggle</button>
       </div>
     )
   }
