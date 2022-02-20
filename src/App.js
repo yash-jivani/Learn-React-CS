@@ -1,22 +1,34 @@
 import React, { useState } from 'react'
-import Student from './component/Student'
 
 export default function App() {
-  const [name1, setName1] = useState("init name")
+
+  // default data ki value null rhegi
+  const [data, setdata] = useState(null)
+  // default showData ki value false rhegis
+  const [showData,setShowdata] = useState(false)
+  
+  // ager user printData ko call karega to showData ki value true hogi
+  const printData = () => {
+    setShowdata(true)
+  }
+
+  // input field me chnage huye data ki value ko get karne ke liye 
+  const getData = (userInput) => {
+      console.log(userInput.target.value)
+      setdata(userInput.target.value)
+  }
+
   return (
     <div className='container'>
-      <h1>Props in React</h1>
+      <h1>-- Get data from input --</h1>
+      {/* jab showData ki value true ho tbhi h1 ko print karo */}
+      {
+        showData?<h3>{data}</h3>:null
+      }
+      {/* getting input from user */}
+      <input type="text" onChange={getData} />
 
-      {/* props ko smjne ke liye hum parameter smj skte hai */}
-
-      <Student name="yash" mail = "yash@gmail.com" number= "8656"/>
-      {/* <Student name="jaymin" mail = "jaymin@gmail.com" number= "65165"/>
-      <Student name="jay" mail = "jay@gmail.com" number= "7856"/> */}
-
-      <Student name={name1}/>
-      <button onClick={()=>{
-        setName1('Edited Name')
-      }}>click here</button>
+      <button onClick={printData}>show data</button>
 
     </div>  
   )
