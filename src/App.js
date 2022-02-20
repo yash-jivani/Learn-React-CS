@@ -1,39 +1,38 @@
 
 /*
 
-===== componentDidMount =====
+===== componentDidUpdate =====
 
-? jab HTMl comp ready hota hai uske bad componentDidMount call hota hai
-? use : with APIs
-* HTML comp ready hone ke bad render method more thn 1 time call kar skte hai lekin componentDidMount sirf ek bar hi call hota hai
-
+*jab props OR state update(change) hoti hai tbhi componentDidUpdate call hota hai
+ 
 */
 
-import React from "react";
+import React, { Component } from 'react'
 
-export default class App extends React.Component{
-
-  constructor(){
-    super()
-    this.state={
-      name:'yash'
+export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0
     }
-    console.log('constructor called')
+    console.log('constructor');
   }
 
-  componentDidMount(){
-    console.log('componentDid Mount called')
+  componentDidUpdate(lastProp, lastState) {
+    console.log('componentDidUpdate')
+    console.log(`currentState = ${this.state.count} lastState = ${lastState.count}`)
   }
 
-  render(){
-    console.log('render called')
-    return(
-      <div className="container">
-        <h2>ComponentDidMount with Class Component</h2>
-        <h3>{this.state.name}</h3>
-        <button onClick={()=>{this.setState({name:'yash-jivani'})}}>click</button>
+  render() {
+    console.log('render')
+    return (
+      <div className='container'>
+
+        <h2>componentDidUpdate with class Component</h2>
+        <h3>{this.state.count}</h3>
+        <button onClick={() => { this.setState({ count: this.state.count + 1 }) }}>click</button>
+
       </div>
     )
   }
 }
-
