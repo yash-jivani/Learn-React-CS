@@ -2,31 +2,31 @@ import React,{ useState } from 'react'
 
 export default function App() {
 
-  // for multiple button | handling state
-  const [mode, setMode] = useState(true)
-  // for sinlge button | handling state
-  const [toggle, settoggle] = useState(true)
+  const [name, setname] = useState(null)
+  const [option, setOption] = useState(null)
+  const [val, setval] = useState(null)
 
+  const getData = (e) => {
+    e.preventDefault()  // auto reload stop
+    console.log(name,option,val) // print value in console
+  }
 
   return (
+    
     <div className='container'>
 
-      {/* ----- WITH MULTIPLE BUTTONS ----- */}
-      {/* if mode = true thn show h1 tag else show nthg */}
-      {
-        mode?<h1>With multiplue buttons</h1>:null
-      }
-      <button onClick={()=>{setMode(true)}}>Show</button>
-      <button onClick={()=>{setMode(false)}}>Hide</button>
+      <h1>Handle form in React</h1>
+      <form onSubmit={getData}>
+        <input type="text" placeholder='Enter your name' onChange={(e)=>{setname(e.target.value)}} /> <br /><br />
+        <select onChange={(e)=>{setOption(e.target.value)}}>
+          <option>hello</option>
+          <option>Marvel</option>
+          <option>DC</option>
+        </select><br /><br />
+        <input type="checkbox" onChange={(e)=>{setval(e.target.checked)}} /> <span>Agree terms and condition</span><br /><br />
+        <button type="submit">submit</button>
 
-      {/* WITH SINGLE BUTTON */}  
-      <br />
-
-      {/* ----- WITH SINGLE BUTTON ----- */}
-      {
-        toggle?<h1>With single button</h1>:null
-      }
-      <button onClick={()=>{settoggle(!toggle)}}>Toggle</button>
+      </form>
 
     </div>
   )
