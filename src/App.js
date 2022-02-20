@@ -1,10 +1,10 @@
 import React from 'react'
-import Conditions from './component/Conditions'
+import SimpleValidation from './component/SimpleValidation'
 
 export default function App() {
   return (
     <div className='container'>
-      <Conditions />
+      <SimpleValidation />
     </div>
   )
 }
