@@ -1,35 +1,33 @@
-import React, { useState } from 'react'
+import React,{ useState } from 'react'
 
 export default function App() {
 
-  // default data ki value null rhegi
-  const [data, setdata] = useState(null)
-  // default showData ki value false rhegis
-  const [showData,setShowdata] = useState(false)
-  
-  // ager user printData ko call karega to showData ki value true hogi
-  const printData = () => {
-    setShowdata(true)
-  }
+  // for multiple button | handling state
+  const [mode, setMode] = useState(true)
+  // for sinlge button | handling state
+  const [toggle, settoggle] = useState(true)
 
-  // input field me chnage huye data ki value ko get karne ke liye 
-  const getData = (userInput) => {
-      console.log(userInput.target.value)
-      setdata(userInput.target.value)
-  }
 
   return (
     <div className='container'>
-      <h1>-- Get data from input --</h1>
-      {/* jab showData ki value true ho tbhi h1 ko print karo */}
+
+      {/* ----- WITH MULTIPLE BUTTONS ----- */}
+      {/* if mode = true thn show h1 tag else show nthg */}
       {
-        showData?<h3>{data}</h3>:null
+        mode?<h1>With multiplue buttons</h1>:null
       }
-      {/* getting input from user */}
-      <input type="text" onChange={getData} />
+      <button onClick={()=>{setMode(true)}}>Show</button>
+      <button onClick={()=>{setMode(false)}}>Hide</button>
 
-      <button onClick={printData}>show data</button>
+      {/* WITH SINGLE BUTTON */}  
+      <br />
 
-    </div>  
+      {/* ----- WITH SINGLE BUTTON ----- */}
+      {
+        toggle?<h1>With single button</h1>:null
+      }
+      <button onClick={()=>{settoggle(!toggle)}}>Toggle</button>
+
+    </div>
   )
 }
