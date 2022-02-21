@@ -1,21 +1,23 @@
 import React from 'react'
-import Users from './component/Users'
+import ChildComp from './component/ChildComp'
 
 export default function App() {
 
-  const users = [
-    { name: 'yash', number: 999 },
-    { name: 'xyz', number: 888 },
-    { name: 'anish', number: 777 },
-  ]
+  const dataFromChild = (data) =>{
+    console.log(data.name)
+    alert(data.name)
+  }
+
+  const nameFromChild = (data2) => {
+    console.log(data2)
+    alert(data2)
+  }
+
   return (
     <div className='container'>
-      <h1>Reuse Component in loop</h1>
-      {
-        users.map((user,i)=>
-        <Users key={i} data={user}/>
-        )
-      }
+      <h1>Lifting State Up</h1>
+      <h4>(Send Data Child to Parent Component)</h4>
+      <ChildComp funcX = {dataFromChild} funcY={nameFromChild}/>
     </div>
   )
 }

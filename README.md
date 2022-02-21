@@ -1,7 +1,8 @@
-# Reuse Component
+# Lifting State Up
+## Send Data Child to Parent Component
 
-Make a commponent
+Make child component
 
-Make a list from the array
+How Pass props parent to a child component
 
-Use component inside map function
+Send data child to parent
