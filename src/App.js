@@ -1,37 +1,24 @@
-
 /*
 
-===== componentWillUnmount =====
-
-* jab koi component delete/hide/remove hota hai tbhi componentWillUnmount calll hota hai
-
+useEffect :  componentDidMount, componentDidUpdate, and componentWillUnmount combined.
+useEffect parameter me ek function leta hai
 */
 
-import React, { Component } from 'react'
-import UnmountEx from './component/UnmountEx';
+import React,{ useState,useEffect } from 'react'
 
-export default class App extends Component {
+export default function App() {
+  const [count, setcount] = useState(0)
+  useEffect( ()=>{
+    console.log('useEffect called')
+  } )
+  return (
 
-  constructor() {
-    super();
-    this.state={
-      show:true
-    }
+    <div className='container'>
 
-    console.log('constructor');
-  }
+      <h1>useEffect-1</h1>
+      <h3>{count}</h3>
+      <button onClick={()=>{setcount(count+1)}}>click</button>
 
-  render() {
-    console.log('render')
-    return (
-      <div className='container'>
-
-        <h2>componentWillUnmount with class Component</h2>
-        {
-          this.state.show?<UnmountEx />:""
-        }
-        <button onClick={()=>{this.setState({show:!this.state.show})}}>Toggle</button>
-      </div>
-    )
-  }
+    </div>
+  )
 }
