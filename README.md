@@ -1,9 +1,9 @@
-# Handle Array With List
+# Nested List with Nested Array
 
-Make an array.
+Make Nested Array
 
-Why use map function, not for loop
+Understand Nested Array
 
-Make List With an array
+Use the map function
 
-Make list with an array of objects
+Use function map function

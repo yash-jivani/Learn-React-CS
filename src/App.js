@@ -1,74 +1,34 @@
-
 import React from 'react'
-
 export default function App() {
 
-  // ? Normal use :: 
-
-  const students = ['yash', 'anish', 'jaymin', 'jay']
-
-  // with for loop
-  console.log('--- for loop ---')
-  for (let i of students) {
-    console.log(i)
-  }
-
-  // with map function
-  console.log('--- map function ---')
-  students.map((data,i) => {
-    console.log(data,i)
-  })
-
-  // ? Real life Example :
-
-  const info = [
-    {name:'yash',mail:"yash@mail.com",number:121},
-    {name:'digu',mail:"digu@mail.com",number:231},
-    {name:'anish',mail:"anish@mail.com",number:221},
-    {name:'jay',mail:"jay@mail.com",number:520},
+  const users = [
+    { name: 'yash', number: [{ personal: 9898 }, { office: 9595 }] },
+    { name: 'anish', number: [{ personal: 4589 }, { office: 9998 }] },
+    { name: 'digu', number: [{ personal: 5582 }, { office: 8787 }] }
   ]
 
   return (
-
     <div className='container'>
 
-      <h1>Array list with Map Function</h1>
-
-      {/* ----------- write in '{}' | JSX --------- */}
-
-{/* WITH MAP FUNCTION */}
-
-      {/* {
-        students.map((item)=>{
-           return <h3>{item}</h3>
-        })
-      } */}
-
-      {/* OR */}
-
+      <h1>Nested Map Function</h1>
       {
-        students.map((item,i) =>
-          <h3 key={i}>{item}</h3>
+        users.map((data, i) =>
+          <div key={i}>
+            <h3>{data.name}</h3>
+            {/* --- Nested Map --- */}
+            {
+              data.number.map((num, i) => {
+                return(
+                <div key={i}>
+                  <h4>{num.personal}</h4>
+                  <h4>{num.office}</h4>
+                </div>
+                )
+              })
+            }
+          </div>
         )
       }
-
-{/* WITH FOR LOOP | will not work */}
-
-      {/* {
-        for(let i of students){
-          <h3>{i}</h3>
-        }
-      } */}
-
-
-      {/* ---------- real life demo example ----------- */}
-
-      {
-        info.map((data,i)=>{
-          return <h3 key={i}>{data.mail} | {data.name} | {data.number}</h3>
-        })
-      }
-
 
     </div>
   )
