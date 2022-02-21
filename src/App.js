@@ -15,8 +15,8 @@ export default function App() {
 
   // with map function
   console.log('--- map function ---')
-  students.map((data) => {
-    console.log(data)
+  students.map((data,i) => {
+    console.log(data,i)
   })
 
   // ? Real life Example :
@@ -47,8 +47,8 @@ export default function App() {
       {/* OR */}
 
       {
-        students.map((item) =>
-          <h3>{item}</h3>
+        students.map((item,i) =>
+          <h3 key={i}>{item}</h3>
         )
       }
 
@@ -64,8 +64,8 @@ export default function App() {
       {/* ---------- real life demo example ----------- */}
 
       {
-        info.map((data)=>{
-          return <h3>{data.mail} | {data.name} | {data.number}</h3>
+        info.map((data,i)=>{
+          return <h3 key={i}>{data.mail} | {data.name} | {data.number}</h3>
         })
       }
 
