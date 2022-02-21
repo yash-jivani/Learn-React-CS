@@ -1,25 +1,30 @@
+
 /*
 
-useEffect with conditions (call useEffect for specific data/state)
+3 ways to add css :
+1) with normal css file 
+2) with inline css
+3) with modular css file
 
 */
 
-import React, { useState } from 'react'
-import EffectWithProp from './component/EffectWithProp'
+import React from 'react'
+import "./style.css"  
+import style from "./custom.module.css"
 
 export default function App() {
-
-  const [one, setone] = useState(1)
-  const [two, settwo] = useState(10)
-
   return (
     <div className='container'>
 
-    <EffectWithProp one={one} two={two}/>
-    <button onClick={() => { setone(one + 1) }}>One</button>
-    <button onClick={() => { settwo(two + 1) }}>Two</button>
+      {/* 1. with normal css file */}
+      <h1 className='heading1'>With Style.css</h1>
+
+      {/* 2. with inline css */}
+      <h1 style={{background:"green",color:'white'}}>With inline css</h1>
+
+      {/* 3. with modular file | sytx : {style.className} */}
+      <h1 className={style.edit}>With modular file</h1>
 
     </div>
   )
 }
-
