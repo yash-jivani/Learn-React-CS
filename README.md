@@ -1,9 +1,7 @@
-# Nested List with Nested Array
+# Reuse Component
 
-Make Nested Array
+Make a commponent
 
-Understand Nested Array
+Make a list from the array
 
-Use the map function
-
-Use function map function
+Use component inside map function

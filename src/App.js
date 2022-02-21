@@ -1,35 +1,21 @@
 import React from 'react'
+import Users from './component/Users'
+
 export default function App() {
 
   const users = [
-    { name: 'yash', number: [{ personal: 9898 }, { office: 9595 }] },
-    { name: 'anish', number: [{ personal: 4589 }, { office: 9998 }] },
-    { name: 'digu', number: [{ personal: 5582 }, { office: 8787 }] }
+    { name: 'yash', number: 999 },
+    { name: 'xyz', number: 888 },
+    { name: 'anish', number: 777 },
   ]
-
   return (
     <div className='container'>
-
-      <h1>Nested Map Function</h1>
+      <h1>Reuse Component in loop</h1>
       {
-        users.map((data, i) =>
-          <div key={i}>
-            <h3>{data.name}</h3>
-            {/* --- Nested Map --- */}
-            {
-              data.number.map((num, i) => {
-                return(
-                <div key={i}>
-                  <h4>{num.personal}</h4>
-                  <h4>{num.office}</h4>
-                </div>
-                )
-              })
-            }
-          </div>
+        users.map((user,i)=>
+        <Users key={i} data={user}/>
         )
       }
-
     </div>
   )
 }
