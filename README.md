@@ -1,7 +1,3 @@
-# Ref in React
+# forwareRef in React
 
-Class based
-
-Why ref
-
-Ref use With example
+parent ka element child mese edit karene ke liye
