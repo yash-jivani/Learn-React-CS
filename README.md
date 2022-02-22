@@ -1,11 +1,7 @@
-# Pure Component
+# Ref in React
 
-## Only for Class based component
+Class based
 
-What is pure component
+Why ref
 
-How to use pure component
-
-Pure component example with State
-
-Pure component example with Props
+Ref use With example

@@ -1,37 +1,35 @@
+/*
 
-import React, { PureComponent } from 'react'
-import ChildPureComp from './component/ChildPureComp';
+Ref : (dom manipulation) | try to avoid
+class based.
 
-export default class App extends PureComponent {
-  constructor(){
+*/
+
+import React, { Component, createRef } from 'react'
+
+export default class App extends Component {
+
+  constructor() {
     super();
-    this.state = {
-      count:1,
-      count2:2,
-    }
+    this.inputRef = createRef();  // build-in function
   }
+
+  getValue() {
+    console.log(this.inputRef)
+    console.log(this.inputRef.current.value)
+    this.inputRef.current.style.color = 'red';
+    this.inputRef.current.style.backgroundColor = 'yellow';
+  }
+
+
   render() {
-    console.log('Rerender!');
     return (
       <div className='container'>
-        <h1>Pure Component</h1>
-        <h3>With state</h3>
-        <h4>{this.state.count}</h4>
 
-{/* updating count value => Rerender */}
-        <button onClick={()=>this.setState({count:this.state.count+1})}>diffCount</button>
+        <h1>Ref in React</h1>
+        <input type="text" ref={this.inputRef} />
+        <button onClick={() => { this.getValue() }} >click</button>
 
-{/* count ki value update to ho rhi hai lekin count ki value last count value jitni hai iss liye Rerender nhi karega
-ager count ki value last value se diff. hogi to hi comp. ko Rerender karega! */}
-        <button onClick={()=>this.setState({count:this.state.count})}>SameCount</button>
-
-{/* with props */}
-        <ChildPureComp count2={this.state.count2} />
-        
-{/* same value */}
-        <button onClick={()=>{this.setState({count2:this.state.count2})}}>same</button>
-{/* diff.value */}
-        <button onClick={()=>{this.setState({count2:this.state.count2+2})}}>Diff</button>
       </div>
     )
   }
