@@ -1,23 +1,15 @@
 
-import React, { useRef } from 'react'
-import ForwardRefDemo from './component/ForwardRefDemo'
+// Controlled Components : jis component me input fields hoti hai aur hum uss filed ko react state ki help se handle karte hai
+
+import React, { useState } from 'react'
 
 export default function App() {
-
-  // create variable using useRef hook
-  let inputRef = useRef(null)
-
-  function handleInput(){
-    console.log('function called')
-    inputRef.current.style.color = 'red'
-    inputRef.current.style.backgroundColor = 'black'
-  }
-
+  const [first, setfirst] = useState('')
   return (
     <div className='container'>
-      <h1>forwardRef</h1>
-      <ForwardRefDemo ref={inputRef} />
-      <button onClick={handleInput}>click</button>
+      <h1 >Controlled Component</h1>
+      <input type="text" value={first} onChange={(e) => { setfirst(e.target.value) }} />
+      <h4>value : {first}</h4>
     </div>
   )
 }

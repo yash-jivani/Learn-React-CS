@@ -1,3 +1,7 @@
-# forwardRef in React
+# Controlled Component
 
-parent ka element child mese edit karene ke liye
+What is controlled commpornent
+
+Make componenet
+
+Example of controlled conponents
