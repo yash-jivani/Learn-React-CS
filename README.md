@@ -1,7 +1,3 @@
-# Controlled Component
+# Uncontrolled Component
 
-What is controlled commpornent
-
-Make componenet
-
-Example of controlled conponents
+Jo bhi component react state ki help se control nhi hota/karte vo sbhi component uncontrolled component hai
