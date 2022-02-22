@@ -1,3 +1,3 @@
-# Uncontrolled Component
+# HighOrderComponent(HOC)
 
-Jo bhi component react state ki help se control nhi hota/karte vo sbhi component uncontrolled component hai
+HOC : Ek Component jo dusre component ko as props leta ho AUR ek agl se component ko return karta ho 

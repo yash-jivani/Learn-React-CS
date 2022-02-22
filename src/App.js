@@ -1,40 +1,53 @@
 
-// Uncontrolled Components : jo bhi component react state ki help se control nhi hota/karte vo sbhi component uncontrolled component hai
-// here we are using useRef and Normal JS method to select elements
+import React from 'react'
 
-import React, { useRef } from 'react'
-
-export default function App() {
-
-  let inputRef = useRef(null)
-  let inputRef2 = useRef(null)
-
-  function formSubmit(e) {
-    e.preventDefault()
-    console.log("input1 : ", inputRef.current.value);
-    console.log("input1 : ", inputRef2.current.value);
-    // selecting element from dom with normal js method
-    let input3 = document.getElementById('in3')
-    console.log("input3 : ", input3.value)
-  }
-
-
+function App() {
   return (
     <div className='container'>
-      <h1>Uncontrolled Component</h1>
+      <h1>High Order Component (HOC)</h1>
 
-      <form onSubmit={formSubmit}>
-        {/* with useRef hook */}
-        <input type="text" ref={inputRef} />
-        <br /><br />
-        <input type="text" ref={inputRef2} />
-        <br /><br />
-        {/* with normal js method */}
-        <input id='in3' type="text" />
-        <br /><br />
+      {/* Modification of 'Anything' component with the help of HOC component */}
 
-        <button>Submit</button>
-      </form>
+      <HOCred comp={Anything} />
+      <HOCgreen comp={Anything} />
+      <HOCblue comp={Anything} />
     </div>
   )
 }
+
+// HOC component
+function HOCred(props) {
+  return (
+
+    <div style={{ width: 100, backgroundColor: 'red' }}>
+      <props.comp />
+    </div>
+  )
+}
+function HOCgreen(props) {
+  return (
+
+    <div style={{ width: 150, backgroundColor: 'green' }}>
+      <props.comp />
+    </div>
+  )
+}
+function HOCblue(props) {
+  return (
+    <div style={{ width: 200, backgroundColor: 'blue' }}>
+      <props.comp />
+    </div>
+  )
+}
+
+// Edit Component
+function Anything() {
+  return (
+    <div>
+      <h5>Name</h5>
+      <h5>other Info</h5>
+    </div>
+  )
+}
+
+export default App
