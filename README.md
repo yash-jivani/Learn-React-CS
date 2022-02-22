@@ -1,3 +1,9 @@
-# HighOrderComponent(HOC)
+# Setup Router
 
-HOC : Ek Component jo dusre component ko as props leta ho AUR ek agl se component ko return karta ho 
+What is Router
+
+Make components
+
+Install route package
+
+Make page

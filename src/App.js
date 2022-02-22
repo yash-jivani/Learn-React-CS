@@ -1,53 +1,57 @@
+/*
+
+components ko pages me convert karnge >> unn components per link add karenge (for new page)
+terminal cmnd : 'npm install react-router-dom' 
+
+*/
 
 import React from 'react'
+import { BrowserRouter as Router , Link , Route, Routes} from 'react-router-dom'
 
-function App() {
+export default function App() {
   return (
     <div className='container'>
-      <h1>High Order Component (HOC)</h1>
 
-      {/* Modification of 'Anything' component with the help of HOC component */}
+      <Router>
 
-      <HOCred comp={Anything} />
-      <HOCgreen comp={Anything} />
-      <HOCblue comp={Anything} />
+        <Link to='/home'>Home page</Link> | | 
+        <Link to='/about'> About page</Link>
+
+{/* sabhi route Rountes ke ander hi aayenge | sytx */}
+    <Routes>
+        <Route path='/' element={<Demo />}></Route>
+        <Route path='/home' element={<Home/>}></Route>
+        <Route path='/about' element={<About />}></Route>
+    </Routes>
+
+      </Router>
+
     </div>
   )
 }
 
-// HOC component
-function HOCred(props) {
+function Demo(){
+  return(
+    <>
+    <h2>Router Setup</h2>
+    </>
+  )
+}
+
+function Home() {
   return (
-
-    <div style={{ width: 100, backgroundColor: 'red' }}>
-      <props.comp />
-    </div>
+    <>
+      <h1>Home page</h1>
+      <p>Lorem ipsum HOME sit amet.</p>
+    </>
   )
 }
-function HOCgreen(props) {
+
+function About() {
   return (
-
-    <div style={{ width: 150, backgroundColor: 'green' }}>
-      <props.comp />
-    </div>
+    <>
+      <h1>About page</h1>
+      <p>Lorem ipsum ABOUT sit amet.</p>
+    </>
   )
 }
-function HOCblue(props) {
-  return (
-    <div style={{ width: 200, backgroundColor: 'blue' }}>
-      <props.comp />
-    </div>
-  )
-}
-
-// Edit Component
-function Anything() {
-  return (
-    <div>
-      <h5>Name</h5>
-      <h5>other Info</h5>
-    </div>
-  )
-}
-
-export default App
