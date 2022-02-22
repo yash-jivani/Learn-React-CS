@@ -1,8 +1,11 @@
-# Lifting State Up
-## Send Data Child to Parent Component
+# Pure Component
 
-Make child component
+## Only for Class based component
 
-How Pass props parent to a child component
+What is pure component
 
-Send data child to parent
+How to use pure component
+
+Pure component example with State
+
+Pure component example with Props
