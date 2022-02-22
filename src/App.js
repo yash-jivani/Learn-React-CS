@@ -1,36 +1,28 @@
 /*
 
-Ref : (dom manipulation) | try to avoid
-class based.
+useRef : (dom manipulation) 
+function based.
 
 */
 
-import React, { Component, createRef } from 'react'
+import React, { useRef } from 'react'
 
-export default class App extends Component {
+export default function App() {
 
-  constructor() {
-    super();
-    this.inputRef = createRef();  // build-in function
+  // create variable using useRef hook
+  let inputRef = useRef(null)
+  
+  function handleInput(){
+    console.log('function called')
+    inputRef.current.style.color = 'red'
+    inputRef.current.style.backgroundColor = 'black'
   }
 
-  getValue() {
-    console.log(this.inputRef)
-    console.log(this.inputRef.current.value)
-    this.inputRef.current.style.color = 'red';
-    this.inputRef.current.style.backgroundColor = 'yellow';
-  }
-
-
-  render() {
-    return (
-      <div className='container'>
-
-        <h1>Ref in React</h1>
-        <input type="text" ref={this.inputRef} />
-        <button onClick={() => { this.getValue() }} >click</button>
-
-      </div>
-    )
-  }
+  return (
+    <div className='container'>
+      <h1>useRef</h1>
+      <input type="text" ref={inputRef} />
+      <button onClick={handleInput}>click</button>
+    </div>
+  )
 }
