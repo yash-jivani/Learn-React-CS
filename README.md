@@ -1,12 +1,4 @@
-# POST Method in REST API
-
-why we use post method
-
-make a form 
-
-submit data to api
-
-test results
+# PUT Method in REST API
 
 ## Fake Json Server
 
