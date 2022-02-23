@@ -1,9 +1,9 @@
-# Layout Router
+# 404 Page Not Found
 
-Use React Router warpper in index.js
+import React Router
 
-Navbar file for links
+Make Simple Routing 
 
-Components in separate file
+Add 404 page
 
-Complete example
+(NOTE: function name === PacsalCase Hona chahiye)
