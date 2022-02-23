@@ -1,9 +1,9 @@
-# Setup Router
+# Layout Router
 
-What is Router
+Use React Router warpper in index.js
 
-Make components
+Navbar file for links
 
-Install route package
+Components in separate file
 
-Make page
+Complete example
