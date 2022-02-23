@@ -3,14 +3,14 @@ import React, { useEffect, useState } from 'react'
 export default function App() {
 
   const [dataArr, setDataArr] = useState([])
-  let URL = `http://localhost:5000/users`;
-
+  
   useEffect(() => {
     getUsers()
     }, [])
 
-  function getUsers(){
-
+    function getUsers(){
+      
+      let URL = `http://localhost:5000/users`;
     fetch(URL)
       .then((response) => { return response.json() })
       .then((data) => { setDataArr(data) })
@@ -24,7 +24,7 @@ export default function App() {
     fetch(URL,{
       method:"DELETE"
     })
-    // getUsers()
+    getUsers()
     
   }
 

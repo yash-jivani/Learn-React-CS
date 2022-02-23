@@ -1,13 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "userId": 1,
-      "name": "yash jivani",
-      "email": "yash@mail.com",
-      "number": 9898
-    },
-    {
       "id": 2,
       "userId": 2,
       "name": "lathiya jaymin",
