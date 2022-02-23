@@ -29,20 +29,16 @@
       "number": 5026
     },
     {
-      "name": "5th name edit",
-      "number": 5555,
-      "email": "5thEmail@edit.com",
+      "userId": 5,
+      "name": "new Name",
+      "email": "Name@gmail.com",
+      "number": 85898,
       "id": 5
     },
     {
-      "name": "6th",
+      "number": 585,
+      "name": "6th req.",
       "id": 6
-    },
-    {
-      "name": "yash-jivani",
-      "email": "exy@mail.com",
-      "number": "777",
-      "id": 7
     }
   ]
 }
