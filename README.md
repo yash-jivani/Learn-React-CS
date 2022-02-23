@@ -1,12 +1,12 @@
-# Call GET Method API
+# POST Method in REST API
 
-What is API
+why we use post method
 
-Call Api
+make a form 
 
-Get API data in State
+submit data to api
 
-Make List from API
+test results
 
 ## Fake Json Server
 
