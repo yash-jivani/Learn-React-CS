@@ -7,6 +7,7 @@ export default function App() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [number, setNumber] = useState("")
+  const [uid, setUid] = useState(null)
 
   useEffect(() => {
     getUsers()
@@ -20,12 +21,12 @@ export default function App() {
       .then((data) => { setDataArr(data) })
   }
 
-  console.log(dataArr);
+  // console.log(dataArr);
 
   const deleteUser = (id) => {
-    URL = `http://localhost:5000/users/${id}`
+    let URLx = `http://localhost:5000/users/${id}`
     alert(id)
-    fetch(URL, {
+    fetch(URLx, {
       method: "DELETE"
     })
     getUsers()
@@ -38,6 +39,21 @@ export default function App() {
     setName(dataArr[idMain].name)
     setEmail(dataArr[idMain].email)
     setNumber(dataArr[idMain].number)
+    setUid(dataArr[idMain].id)
+  }
+
+  const editUser = () => {
+    // console.log(uid)
+    let item = {name,email,number,uid}
+    let URL2 = `http://localhost:5000/users/${uid}`
+    fetch(URL2, {
+      method: "PUT",
+      headers : {
+        "Accept" : "application/json",
+        "Content-Type" : "application/json"
+      },
+      body:JSON.stringify(item)
+    }).then(getUsers)
   }
 
   return (
@@ -52,7 +68,7 @@ export default function App() {
               <h5>__________________</h5>
               <h2>{user.name}, {user.email}, {user.number}</h2>
               <button onClick={() => { deleteUser(user.id) }}>DELETE</button>
-              <button onClick={() => { selectUser(user.id) }}>Fill-data</button>
+              <button onClick={() => { selectUser(user.id) }}>Fill-data (edit) </button>
             </div>
           )
         })
@@ -64,7 +80,7 @@ export default function App() {
         <input type="text" value={name} onChange={(e)=>{setName(e.target.value)}}/> <br /> <br />
         <input type="text" value={email} onChange={(e)=>{setEmail(e.target.value)}}/> <br /> <br />
         <input type="text" value={number} onChange={(e)=>{setNumber(e.target.value)}}/> <br /> <br />
-        <button>Update-User</button>
+        <button onClick={editUser}>Update-User</button>
       </div>
 
     </div>

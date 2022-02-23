@@ -1,25 +1,25 @@
 {
   "users": [
     {
-      "id": 1,
-      "userId": 1,
       "name": "yash jivani",
       "email": "yash@mail.com",
-      "number": 9898
+      "number": "7778",
+      "uid": 1,
+      "id": 1
     },
     {
-      "id": 2,
-      "userId": 2,
       "name": "lathiya jaymin",
-      "email": "jaymin@mail.com",
-      "number": 9885
+      "email": "jaymin@mail.",
+      "number": 9885,
+      "uid": 2,
+      "id": 2
     },
     {
-      "id": 3,
-      "userId": 3,
       "name": "jay goswami",
-      "email": "jay@mail.com",
-      "number": 9588
+      "email": "jay@mail.comx",
+      "number": 9588,
+      "uid": 3,
+      "id": 3
     },
     {
       "id": 4,
@@ -29,16 +29,17 @@
       "number": 5026
     },
     {
-      "userId": 5,
-      "name": "new Name",
-      "email": "Name@gmail.com",
+      "name": "new ",
+      "email": "hello@gmail.com",
       "number": 85898,
+      "uid": 5,
       "id": 5
     },
     {
-      "number": 585,
-      "name": "6th req",
-      "email" :"6thmail@id.com",
+      "name": "six",
+      "email": "6thmail@id.com",
+      "number": "585858",
+      "uid": 6,
       "id": 6
     }
   ]
