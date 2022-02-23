@@ -1,9 +1,17 @@
-# 404 Page Not Found
+# Call GET Method API
 
-import React Router
+What is API
 
-Make Simple Routing 
+Call Api
 
-Add 404 page
+Get API data in State
 
-(NOTE: function name === PacsalCase Hona chahiye)
+Make List from API
+
+## Fake Json Server
+
+#### Create Fake json server
+
+`npm install -g json-server`
+
+`json-server -p 5000 db.json`

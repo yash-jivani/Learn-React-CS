@@ -1,0 +1,28 @@
+{
+  "users" : [
+    {
+    "userId" :1,
+    "name"  : "yash jivani",
+    "email" : "yash@mail.com",
+    "number" : 9898
+  },
+  {
+    "userId" :2,
+    "name"  : "lathiya jaymin",
+    "email" : "jaymin@mail.com",
+    "number" : 9885
+  },
+  {
+    "userId" :3,
+    "name"  : "jay goswami",
+    "email" : "jay@mail.com",
+    "number" : 9588
+  },
+  {
+    "userId" :4,
+    "name"  : "abc xyz",
+    "email" : "xyz@mail.com",
+    "number" : 5026
+  }
+]
+}
