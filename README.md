@@ -1,9 +1,7 @@
-# PUT Method in REST API
+# Previous state value in function component
 
-## Fake Json Server
+What is previous state
 
-#### Create Fake json server
+Why we need it
 
-`npm install -g json-server`
-
-`json-server -p 5000 db.json`
+How to get it and use it 
