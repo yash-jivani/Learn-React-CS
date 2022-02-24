@@ -1,7 +1,17 @@
-# State with object
+# Redux with react
 
-Make state with object 
+## Installation 
 
-Try to update and understand the problem 
+`npm install redux`
 
-Resolve the problem
+`npm install react-redux`
+
+## Basic 
+
+What is props
+
+Make Component
+
+Pass data 1 component to other component
+
+Get data with props
