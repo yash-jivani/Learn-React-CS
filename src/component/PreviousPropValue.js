@@ -4,7 +4,7 @@ export default function PreviousPropValue(props) {
 
     // * explanation : csbys | 59 | 7.00 
 
-    // useRef value ko direct dom se lega
+    // useEffect ki help se useRef direct dom se current value ko lega (update hone ne pehle)
     const lastPropVal = useRef();
     console.log("'lastPropVal' (useRef) : ", lastPropVal)
     useEffect(() => {
